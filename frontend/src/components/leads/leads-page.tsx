@@ -27,9 +27,9 @@ const defaultPagination: PaginationType = {
   pages: 1
 };
 
-export const LeadsPage = () => {
+export const LeadsPage = ({ initialFilters = defaultFilters }: { initialFilters?: LeadFiltersState }) => {
   const [leads, setLeads] = useState<Lead[]>([]);
-  const [filters, setFilters] = useState(defaultFilters);
+  const [filters, setFilters] = useState({ ...defaultFilters, ...initialFilters });
   const [pagination, setPagination] = useState(defaultPagination);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
