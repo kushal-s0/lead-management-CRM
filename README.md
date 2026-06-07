@@ -1,3 +1,7 @@
+## 🎬 Demo Video
+
+[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Demo-GeoSwipe-blue?style=for-the-badge)](https://drive.google.com/file/d/1u2XfoSPr_b9oiNx9GzWAN86JszCxNY1k/view?usp=sharing)
+
 # Lead Management CRM
 
 A production-style Lead Management CRM built for a Full Stack Developer Internship assessment. The project includes a typed Express API, MongoDB persistence, server-side pagination, filtering, sorting, search, and a modern responsive Next.js dashboard with charts.
