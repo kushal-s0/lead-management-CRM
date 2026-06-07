@@ -2,8 +2,19 @@ import axios from "axios";
 import type { Lead, LeadStats, LeadsResponse, LeadStatus } from "@/types/lead";
 import type { LeadFormValues } from "./validators";
 
+const normalizeApiBaseUrl = (url?: string) => {
+  const fallback = "http://localhost:5000/api";
+
+  if (!url || !url.trim()) {
+    return fallback;
+  }
+
+  const normalized = url.trim().replace(/\/+$/, "");
+  return normalized.endsWith("/api") ? normalized : `${normalized}/api`;
+};
+
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api",
+  baseURL: normalizeApiBaseUrl(process.env.NEXT_PUBLIC_API_URL),
   timeout: 15000
 });
 
